@@ -1,0 +1,1 @@
+Juego de ritmo multijugador local 2D, donde debemos seguir una secuencia presentada por el sensei y debemos derrotar en cantidad de rondas ganas a nuestro rival para convertirnos en el nuevo Sensei.

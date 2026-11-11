@@ -1,0 +1,685 @@
+/* ==========================================================================
+   HOJA DE ESTILOS PRINCIPAL (style.css)
+   Portfolio de Santiago Joaquín Ledesma Tornau - Programación 1 (UNRAF)
+   Incluye 2 Modelos de Diseño intercambiables:
+   1. Modelo Oscuro (Estilo Gamer / inspirado en Godot Engine) -> [data-theme="dark"]
+   2. Modelo Claro y Minimalista (Estilo Editorial limpio)     -> [data-theme="light"]
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES CSS (DEFINICIÓN DE LOS 2 MODELOS)
+   -------------------------------------------------------------------------- */
+
+/* MODELO 1: OSCURO (GAMER / GODOT) - Por defecto */
+:root,
+[data-theme="dark"] {
+    --bg-primary: #0b0f19;
+    --bg-secondary: #111827;
+    --bg-card: #161f33;
+    --bg-navbar: rgba(11, 15, 25, 0.88);
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --accent-primary: #38bdf8;       /* Celeste inspirado en Godot Engine */
+    --accent-secondary: #818cf8;     /* Violeta suave */
+    --accent-bg-soft: rgba(56, 189, 248, 0.12);
+    --border-color: #1f2937;
+    --border-hover: #38bdf8;
+    --card-radius: 14px;
+    --btn-radius: 10px;
+    --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+    --shadow-hover: 0 14px 35px -10px rgba(56, 189, 248, 0.25);
+    --hero-gradient: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.14), transparent 45%),
+                     radial-gradient(circle at 80% 0%, rgba(129, 140, 248, 0.12), transparent 40%);
+}
+
+/* MODELO 2: CLARO Y MINIMALISTA (EDITORIAL) */
+[data-theme="light"] {
+    --bg-primary: #fafafa;
+    --bg-secondary: #f1f1f4;
+    --bg-card: #ffffff;
+    --bg-navbar: rgba(250, 250, 250, 0.92);
+    --text-primary: #18181b;
+    --text-secondary: #52525b;
+    --accent-primary: #18181b;       /* Negro grafito minimalista */
+    --accent-secondary: #2563eb;     /* Azul técnico sutil */
+    --accent-bg-soft: #f4f4f5;
+    --border-color: #e4e4e7;
+    --border-hover: #18181b;
+    --card-radius: 6px;              /* Bordes más rectos y minimalistas */
+    --btn-radius: 6px;
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --hero-gradient: none;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESETEO GENERAL Y TIPOGRAFÍA
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.65;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Contenedor centrado reutilizable */
+.container {
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. BARRA DE NAVEGACIÓN Y BOTÓN CAMBIO DE MODELO
+   -------------------------------------------------------------------------- */
+.site-header {
+    background-image: var(--hero-gradient);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--bg-navbar);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.logo-bracket {
+    color: var(--accent-primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.nav-links a:hover {
+    color: var(--accent-primary);
+}
+
+/* Botón para alternar entre Modelo Oscuro y Modelo Claro */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.95rem;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--btn-radius);
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-1px);
+}
+
+/* Botón menú hamburguesa (oculto en escritorio) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
+.hamburger-line {
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: 0.3s;
+}
+
+/* --------------------------------------------------------------------------
+   4. SECCIÓN HERO (ENCABEZADO)
+   -------------------------------------------------------------------------- */
+.hero {
+    padding: 5.5rem 0 6rem;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    margin-bottom: 1.2rem;
+    background-color: var(--accent-bg-soft);
+    color: var(--accent-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    margin-bottom: 2.2rem;
+}
+
+.hero-subtitle strong {
+    color: var(--text-primary);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--btn-radius);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   5. SECCIONES GENERALES Y SOBRE MÍ
+   -------------------------------------------------------------------------- */
+.section {
+    padding: 5rem 0;
+}
+
+.section-alt {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-header {
+    margin-bottom: 2.8rem;
+}
+
+.section-tag {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-primary);
+    margin-bottom: 0.4rem;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    margin-top: 0.6rem;
+    max-width: 650px;
+}
+
+.about-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    padding: 2.2rem;
+    box-shadow: var(--shadow-card);
+}
+
+.about-text {
+    font-size: 1.08rem;
+    color: var(--text-secondary);
+}
+
+.about-text + .about-text {
+    margin-top: 1.2rem;
+}
+
+.about-text strong {
+    color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   6. HABILIDADES (SKILLS)
+   -------------------------------------------------------------------------- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.8rem;
+}
+
+.skill-category {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+}
+
+.skill-category-featured {
+    border-color: var(--accent-primary);
+}
+
+.skill-category-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.skill-category-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.9rem 1rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--btn-radius);
+}
+
+.skill-highlight {
+    border-left: 4px solid var(--accent-primary);
+}
+
+.skill-item strong {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.skill-item span {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-tags li {
+    padding: 0.6rem 1.1rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--btn-radius);
+    font-weight: 600;
+    font-size: 0.92rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. PORTFOLIO / PROYECTOS (CARPETA trabajos/)
+   -------------------------------------------------------------------------- */
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 2.2rem;
+}
+
+.filter-btn {
+    padding: 0.55rem 1.1rem;
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--btn-radius);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    border-color: var(--accent-primary);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.8rem;
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-hover);
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+.project-image-wrapper {
+    position: relative;
+    height: 210px;
+    background-color: #000;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+    transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.03);
+}
+
+.image-controls {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.img-switch-btn {
+    background-color: rgba(15, 23, 42, 0.85);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: background-color 0.2s ease;
+}
+
+.img-switch-btn:hover {
+    background-color: #0284c7;
+}
+
+.project-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.85rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    background-color: var(--accent-bg-soft);
+    color: var(--accent-primary);
+    border-radius: 999px;
+}
+
+.project-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+}
+
+.project-description {
+    font-size: 0.94rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.4rem;
+    flex-grow: 1;
+}
+
+.project-footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.project-link {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   8. CONTACTO Y PIE DE PÁGINA (FOOTER)
+   -------------------------------------------------------------------------- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.4rem;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+}
+
+.contact-icon {
+    font-size: 2rem;
+}
+
+.contact-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+
+.contact-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    word-break: break-all;
+}
+
+.site-footer {
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.footer-note {
+    margin-top: 0.4rem;
+    font-size: 0.82rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. MODAL VISOR DE IMAGEN (LIGHTBOX)
+   -------------------------------------------------------------------------- */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.88);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    z-index: 999;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 92vw;
+    max-height: 86vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   10. DISEÑO RESPONSIVE (CELULARES Y TABLETS)
+   -------------------------------------------------------------------------- */
+@media (max-width: 820px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-card);
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        gap: 0;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        border-top: 1px solid var(--border-color);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1rem 1.5rem;
+    }
+}
+

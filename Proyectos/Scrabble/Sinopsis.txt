@@ -1,0 +1,1 @@
+Juego de cruzar palabras inspirado en Scrabble. Con traducciones en tiempo real en Ingles, Frances, Portugues, Italiano y Alemán. Permite conexiones online a traves de direcciones ip.

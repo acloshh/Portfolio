@@ -1,0 +1,1 @@
+Salto de tupá es un juego endless jumper en 2D para dispositivos móviles donde el jugador debe mover el teléfono de izquierda a derecha para mover al personaje para tratar de subir lo máximo posible, en el medio se enfrentara a desafíos como pinchos o plataformas impasables. Tendrá power-ups para alivianar el juego.

@@ -1,0 +1,1 @@
+Bomb shooter es un juego de puzzles 2D para PC, donde debemos limpiar todas las bombas de la pantalla para ganar el nivel, se destacan los colores y los diferentes power-up.

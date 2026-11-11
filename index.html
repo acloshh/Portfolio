@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio personal y CV digital de Santiago Joaquín Ledesma Tornau - Estudiante de Producción de Videojuegos y Entretenimiento Digital en UNRAF.">
+    <title>Santiago Ledesma Tornau | Producción de Videojuegos</title>
+
+    <!-- Fuente moderna y limpia desde Google Fonts (Inter + Space Grotesk para títulos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Vinculación con la hoja de estilos externa -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         BARRA DE NAVEGACIÓN
+    =========================================== -->
+    <header class="site-header" id="inicio">
+        <nav class="navbar container" aria-label="Navegación principal">
+            <a href="#inicio" class="logo">
+                <span class="logo-bracket">&lt;</span>SLT<span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <!-- Botón menú hamburguesa para celulares -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- Enlaces de navegación -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <!-- Botón interactivo para alternar entre los 2 Modelos (Oscuro Gamer / Claro Minimalista) -->
+            <button class="theme-toggle" id="theme-toggle" type="button" title="Cambiar entre Modelo Oscuro y Modelo Claro Minimalista">
+                <span class="theme-icon" id="theme-icon">☀️</span>
+                <span class="theme-label" id="theme-label">Modelo Claro</span>
+            </button>
+        </nav>
+
+        <!-- ==========================================
+             SECCIÓN HERO (ENCABEZADO PRINCIPAL)
+        =========================================== -->
+        <div class="hero container">
+            <div class="hero-content">
+                <p class="hero-badge">🎮 Game Developer &amp; Producer</p>
+                <h1 class="hero-title">Santiago Joaquín Ledesma Tornau</h1>
+                <p class="hero-subtitle">
+                    Estudiante de Producción de Videojuegos y Entretenimiento Digital — <strong>UNRAF</strong>
+                </p>
+                <div class="hero-actions">
+                    <a href="#proyectos" class="btn btn-primary">Ver mis videojuegos</a>
+                    <a href="https://github.com/acloshh" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        GitHub (@acloshh)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+    =========================================== -->
+    <main>
+
+        <!-- ==========================================
+             SECCIÓN 1: SOBRE MÍ
+        =========================================== -->
+        <section id="sobre-mi" class="section container">
+            <div class="section-header">
+                <span class="section-tag">01 // Presentación</span>
+                <h2 class="section-title">Sobre Mí</h2>
+            </div>
+
+            <div class="about-card">
+                <p class="about-text">
+                    Soy un apasionado del videojuego: vivo por y para los videojuegos. Son la fuente de mi vida y me otorgan emociones y vivencias que pocas otras cosas han podido lograr.
+                </p>
+                <p class="about-text">
+                    Actualmente me formo en la <strong>Universidad Nacional de Rafaela (UNRAF)</strong> en la carrera de <em>Producción de Videojuegos y Entretenimiento Digital</em>. Me considero capaz de formar parte de la industria de una manera activa, diseñando, prototipando y produciendo experiencias jugables desde cero.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 2: HABILIDADES (SKILLS)
+        =========================================== -->
+        <section id="habilidades" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">02 // Herramientas y Tecnologías</span>
+                    <h2 class="section-title">Habilidades</h2>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Herramienta Principal: Godot Engine -->
+                    <article class="skill-category skill-category-featured">
+                        <div class="skill-category-header">
+                            <span class="skill-icon">🤖</span>
+                            <div>
+                                <h3>Motor Principal y Producción de Juegos</h3>
+                                <p class="skill-category-desc">Mi herramienta central de trabajo para crear videojuegos</p>
+                            </div>
+                        </div>
+                        <ul class="skill-list">
+                            <li class="skill-item skill-highlight">
+                                <strong>Godot Engine</strong>
+                                <span>Desarrollo 2D, mecánicas de juego, físicas, UI e implementación integral</span>
+                            </li>
+                            <li class="skill-item">
+                                <strong>GDScript / Lógica de Juego</strong>
+                                <span>Programación de sistemas de juego, IA, multijugador local/IP y estados</span>
+                            </li>
+                            <li class="skill-item">
+                                <strong>Diseño y Producción</strong>
+                                <span>Prototipado rápido, diseño de niveles, balance de dificultad y game feel</span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- Tecnologías requeridas por la cátedra Programación 1 -->
+                    <article class="skill-category">
+                        <div class="skill-category-header">
+                            <span class="skill-icon">💻</span>
+                            <div>
+                                <h3>Control de Versiones y Tecnologías Web</h3>
+                                <p class="skill-category-desc">Herramientas aplicadas en este portfolio y gestión de repositorios</p>
+                            </div>
+                        </div>
+                        <ul class="skill-tags">
+                            <li>Git</li>
+                            <li>GitHub</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 3: PORTFOLIO / PROYECTOS
+             ESTRUCTURA DE CARPETAS:
+             Todas las imágenes y sinopsis se leen desde la subcarpeta "trabajos/"
+             (copiada a partir de tu carpeta "Proyectos/" para cumplir con la consigna).
+        =========================================== -->
+        <section id="proyectos" class="section container">
+            <div class="section-header">
+                <span class="section-tag">03 // Mis Videojuegos en Godot</span>
+                <h2 class="section-title">Proyectos Realizados</h2>
+                <p class="section-subtitle">
+                    Explorá los juegos que desarrollé. Podés alternar entre las capturas de pantalla de cada proyecto o hacer clic en la imagen para ampliarla.
+                </p>
+            </div>
+
+            <!-- Botones de filtro interactivo (JavaScript) -->
+            <div class="project-filters" role="group" aria-label="Filtrar proyectos por categoría">
+                <button class="filter-btn active" data-filter="todos">Todos (6)</button>
+                <button class="filter-btn" data-filter="accion-puzzle">Acción y Puzzle</button>
+                <button class="filter-btn" data-filter="multijugador">Multijugador / Mesa</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+            </div>
+
+            <!-- Grilla de Proyectos -->
+            <div class="projects-grid" id="projects-grid">
+
+                <!-- ==========================================
+                     PROYECTO 1: BOMB SHOOTER
+                     Carpeta: trabajos/Bomb Shooter/
+                =========================================== -->
+                <article class="project-card" data-category="accion-puzzle">
+                    <div class="project-image-wrapper">
+                        <!-- RUTA DE IMAGEN EN CARPETA trabajos/ -->
+                        <img
+                            src="trabajos/Bomb Shooter/bomb shooter.png"
+                            alt="Captura de pantalla del juego Bomb Shooter"
+                            class="project-img"
+                            data-images="trabajos/Bomb Shooter/bomb shooter.png|trabajos/Bomb Shooter/bomb shooter1.png"
+                            data-current-index="0"
+                        >
+                        <div class="image-controls">
+                            <button class="img-switch-btn" type="button" aria-label="Cambiar captura de Bomb Shooter">
+                                🔄 Ver otra captura (1/2)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">Godot 2D</span>
+                            <span class="tag">Puzzle</span>
+                            <span class="tag">PC</span>
+                        </div>
+                        <!-- TÍTULO Y DESCRIPCIÓN DEL PROYECTO (Sinopsis.txt) -->
+                        <h3 class="project-title">Bomb Shooter</h3>
+                        <p class="project-description">
+                            Juego de puzzles 2D para PC donde debemos limpiar todas las bombas de la pantalla para ganar el nivel. Se destacan sus colores vibrantes y los diferentes power-ups.
+                        </p>
+                        <div class="project-footer">
+                            <!-- LINK AL REPOSITORIO: Podés apuntar al repo específico de este juego si querés -->
+                            <a href="https://github.com/acloshh" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver en GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ==========================================
+                     PROYECTO 2: CAZADORA INVISIBLE
+                     Carpeta: trabajos/Cazadora Invisible/
+                =========================================== -->
+                <article class="project-card" data-category="accion-puzzle">
+                    <div class="project-image-wrapper">
+                        <!-- RUTA DE IMAGEN EN CARPETA trabajos/ -->
+                        <img
+                            src="trabajos/Cazadora Invisible/Untitled.png"
+                            alt="Captura de pantalla del juego Cazadora Invisible"
+                            class="project-img"
+                            data-images="trabajos/Cazadora Invisible/Untitled.png"
+                            data-current-index="0"
+                        >
+                    </div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">Godot 2D</span>
+                            <span class="tag">Sigilo Táctico</span>
+                            <span class="tag">Plataformas</span>
+                        </div>
+                        <!-- TÍTULO Y DESCRIPCIÓN DEL PROYECTO (Sinopsis.txt) -->
+                        <h3 class="project-title">Cazadora Invisible</h3>
+                        <p class="project-description">
+                            Plataformas lateral 2D (Side-Scroller) enfocado en el sigilo táctico, la supervivencia y el uso del entorno. Encarnás a una hábil guerrera originaria que debe atravesar la selva e infiltrarse en el fuerte invasor utilizando camuflaje y tácticas de guerrilla desde las sombras.
+                        </p>
+                        <div class="project-footer">
+                            <a href="https://github.com/acloshh" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver en GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ==========================================
+                     PROYECTO 3: POOL
+                     Carpeta: trabajos/Pool/
+                =========================================== -->
+                <article class="project-card" data-category="multijugador">
+                    <div class="project-image-wrapper">
+                        <!-- RUTA DE IMAGEN EN CARPETA trabajos/ -->
+                        <img
+                            src="trabajos/Pool/Untitled.png"
+                            alt="Captura de pantalla del juego Pool"
+                            class="project-img"
+                            data-images="trabajos/Pool/Untitled.png|trabajos/Pool/Untitled1.png"
+                            data-current-index="0"
+                        >
+                        <div class="image-controls">
+                            <button class="img-switch-btn" type="button" aria-label="Cambiar captura de Pool">
+                                🔄 Ver otra captura (1/2)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">Godot 2D</span>
+                            <span class="tag">Arcade / Deportes</span>
+                            <span class="tag">1v1 &amp; IA</span>
+                        </div>
+                        <!-- TÍTULO Y DESCRIPCIÓN DEL PROYECTO (Sinopsis.txt) -->
+                        <h3 class="project-title">Pool Arcade 2D</h3>
+                        <p class="project-description">
+                            Simulador arcade de pool en 2D con gráficos limpios. Incluye partidas 1v1 entre humanos, partidas 1v1 contra inteligencia artificial en 3 dificultades y un modo torneo VS IA.
+                        </p>
+                        <div class="project-footer">
+                            <a href="https://github.com/acloshh" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver en GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ==========================================
+                     PROYECTO 4: SALTO DE TUPÁ
+                     Carpeta: trabajos/Salto de Tupá/
+                =========================================== -->
+                <article class="project-card" data-category="mobile">
+                    <div class="project-image-wrapper">
+                        <!-- RUTA DE IMAGEN EN CARPETA trabajos/ -->
+                        <img
+                            src="trabajos/Salto de Tupá/WhatsApp Image 2026-11-11 at 5.54.16 PM.jpeg"
+                            alt="Captura de pantalla del juego Salto de Tupá"
+                            class="project-img"
+                            data-images="trabajos/Salto de Tupá/WhatsApp Image 2026-11-11 at 5.54.16 PM.jpeg|trabajos/Salto de Tupá/WhatsApp Image 2026-11-11 at 5.54.17 PM.jpeg"
+                            data-current-index="0"
+                        >
+                        <div class="image-controls">
+                            <button class="img-switch-btn" type="button" aria-label="Cambiar captura de Salto de Tupá">
+                                🔄 Ver otra captura (1/2)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">Godot 2D</span>
+                            <span class="tag">Endless Jumper</span>
+                            <span class="tag">Mobile</span>
+                        </div>
+                        <!-- TÍTULO Y DESCRIPCIÓN DEL PROYECTO (Sinopsis.txt) -->
+                        <h3 class="project-title">Salto de Tupá</h3>
+                        <p class="project-description">
+                            Endless jumper en 2D para dispositivos móviles donde el jugador inclina el teléfono de izquierda a derecha para subir lo más alto posible, esquivando pinchos, superando plataformas y recolectando power-ups.
+                        </p>
+                        <div class="project-footer">
+                            <a href="https://github.com/acloshh" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver en GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ==========================================
+                     PROYECTO 5: SCRABBLE
+                     Carpeta: trabajos/Scrabble/
+                =========================================== -->
+                <article class="project-card" data-category="multijugador">
+                    <div class="project-image-wrapper">
+                        <!-- RUTA DE IMAGEN EN CARPETA trabajos/ -->
+                        <img
+                            src="trabajos/Scrabble/Untitled.png"
+                            alt="Captura de pantalla del juego Scrabble"
+                            class="project-img"
+                            data-images="trabajos/Scrabble/Untitled.png|trabajos/Scrabble/Untitled1.png"
+                            data-current-index="0"
+                        >
+                        <div class="image-controls">
+                            <button class="img-switch-btn" type="button" aria-label="Cambiar captura de Scrabble">
+                                🔄 Ver otra captura (1/2)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">Godot 2D</span>
+                            <span class="tag">Multijugador IP</span>
+                            <span class="tag">Palabras</span>
+                        </div>
+                        <!-- TÍTULO Y DESCRIPCIÓN DEL PROYECTO (Sinopsis.txt) -->
+                        <h3 class="project-title">Scrabble Online</h3>
+                        <p class="project-description">
+                            Juego de cruzar palabras inspirado en Scrabble. Cuenta con traducciones en tiempo real en inglés, francés, portugués, italiano y alemán, y permite partidas online mediante conexión por dirección IP.
+                        </p>
+                        <div class="project-footer">
+                            <a href="https://github.com/acloshh" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver en GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ==========================================
+                     PROYECTO 6: SENSEI DICE
+                     Carpeta: trabajos/Sensei Dice/
+                =========================================== -->
+                <article class="project-card" data-category="multijugador">
+                    <div class="project-image-wrapper">
+                        <!-- RUTA DE IMAGEN EN CARPETA trabajos/ -->
+                        <img
+                            src="trabajos/Sensei Dice/Untitled.png"
+                            alt="Captura de pantalla del juego Sensei Dice"
+                            class="project-img"
+                            data-images="trabajos/Sensei Dice/Untitled.png|trabajos/Sensei Dice/Untitled1.png"
+                            data-current-index="0"
+                        >
+                        <div class="image-controls">
+                            <button class="img-switch-btn" type="button" aria-label="Cambiar captura de Sensei Dice">
+                                🔄 Ver otra captura (1/2)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">Godot 2D</span>
+                            <span class="tag">Ritmo</span>
+                            <span class="tag">Multijugador Local</span>
+                        </div>
+                        <!-- TÍTULO Y DESCRIPCIÓN DEL PROYECTO (Sinopsis.txt) -->
+                        <h3 class="project-title">Sensei Dice</h3>
+                        <p class="project-description">
+                            Juego de ritmo multijugador local en 2D donde debemos seguir la secuencia presentada por el Sensei y superar en rondas ganadas a nuestro rival para convertirnos en el nuevo Sensei.
+                        </p>
+                        <div class="project-footer">
+                            <a href="https://github.com/acloshh" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Ver en GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 4: CONTACTO
+        =========================================== -->
+        <section id="contacto" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">04 // Hablemos</span>
+                    <h2 class="section-title">Contacto</h2>
+                    <p class="section-subtitle">
+                        ¿Querés charlar sobre desarrollo de videojuegos en Godot, proyectos colaborativos o propuestas? ¡Escribime!
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Tarjeta Email -->
+                    <a href="mailto:santitornau@gmail.com" class="contact-card">
+                        <span class="contact-icon">✉️</span>
+                        <div>
+                            <h3>Correo Electrónico</h3>
+                            <p>santitornau@gmail.com</p>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta GitHub -->
+                    <a href="https://github.com/acloshh" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <span class="contact-icon">🐙</span>
+                        <div>
+                            <h3>GitHub</h3>
+                            <p>github.com/acloshh</p>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta LinkedIn (Placeholder listo por si creás o sumás tu perfil) -->
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <span class="contact-icon">💼</span>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p>Santiago Ledesma Tornau</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         PIE DE PÁGINA (FOOTER)
+    =========================================== -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>© 2026 <strong>Santiago Joaquín Ledesma Tornau</strong> — Producción de Videojuegos y Entretenimiento Digital (UNRAF).</p>
+            <p class="footer-note">Desarrollado con HTML5, CSS3 y JavaScript para Programación 1.</p>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         MODAL VISOR DE IMÁGENES (LIGHTBOX)
+    =========================================== -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">&times;</button>
+        <img src="" alt="Vista ampliada del proyecto" class="lightbox-img" id="lightbox-img">
+    </div>
+
+    <!-- Script para interactividad (Cambio de modelo Oscuro/Claro, Filtros, Galería) -->
+    <script src="script.js"></script>
+</body>
+</html>

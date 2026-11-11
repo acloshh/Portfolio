@@ -1,0 +1,1 @@
+Un simulador arcade de pool en 2D con gráficos simples, incluye partidas 1v1 entre humanos, partidas 1v1 contra IA en 3 dificultades y modo torneo VS IA.
