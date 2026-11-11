@@ -1,6 +1,6 @@
 /* ==========================================================================
    SCRIPT INTERACTIVO (script.js)
-   Portfolio de Santiago Joaquín Ledesma Tornau - Programación 1 (UNRAF)
+   Portfolio de Santiago Tornau - Programación 1 (UNRAF)
    Funciones incluidas:
    1. Cambio en vivo entre los 2 Modelos de diseño (Oscuro Gamer vs. Claro Minimalista).
    2. Filtro de proyectos por categoría.
